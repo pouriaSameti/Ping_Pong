@@ -2,7 +2,7 @@ import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
-from utils import Point, Rocket, Ball
+from utils import Point, Rocket, Ball, Numbers
 
 
 def init_orthographic():  # this function sets the orthographic view for viewer
@@ -21,9 +21,16 @@ if __name__ == '__main__':
     p4 = Point(630, 200)
     r2 = Rocket(p3, p4, 'blue')
 
-    p5 = Point(280, 200)
+    p5 = Point(280, 400)
     base_coordinate = (280, 200)
     ball = Ball(p5, 'orange')
+
+    p6 = Point(250, 460)
+    score_r1 = Numbers(p6)
+
+    p7 = Point(350, 460)
+    score_r2 = Numbers(p7)
+
 
     move_factor = 10
     ball_move_factor_x = 0.045
@@ -90,6 +97,9 @@ if __name__ == '__main__':
             r1.show_rocket()
             r2.show_rocket()
             ball.show_ball()
+
+            score_r1.show_number(score_red)
+            score_r2.show_number(score_blue)
 
             pygame.display.flip()  # this functions from pygame checks frame buffer and flush it every 100 millisecond's
 
