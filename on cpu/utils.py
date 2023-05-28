@@ -50,3 +50,10 @@ class Ball:
     def set_coordinate(self, coordinate: tuple):
         self.coordinate.x = coordinate[0]
         self.coordinate.y = coordinate[1]
+
+    def show_ball(self):
+        glColor4f(*self.__color)
+        glPointSize(12)  # this method sets the size of the points
+        glBegin(GL_POINTS)
+        glVertex2f(self.coordinate.x, self.coordinate.y)
+        glEnd()
