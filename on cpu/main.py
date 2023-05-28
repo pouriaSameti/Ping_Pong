@@ -51,6 +51,8 @@ if __name__ == '__main__':
             if ball.coordinate.x >= 640 or ball.coordinate.x <= 0:
                 ball_move_factor_x = -ball_move_factor_x
 
+            if ball.collision_r1(r1) or ball.collision_r2(r2):
+                ball_move_factor_x = -ball_move_factor_x
             ball.move(ball_move_factor_x, ball_move_factor_y)
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # This function clears buffers to preset values
