@@ -1,6 +1,21 @@
 from OpenGL.GL import *
 
-color = {'red': [1, 0, 0, 1], 'green': [0, 1, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1]}
+color = {'red': [1, 0, 0, 1], 'green': [0, 1, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1],
+         'white': [1, 1, 1, 1], 'gray': [0.93, 0.93, 0.93, 1.0]}
+
+
+class GamePlane:
+
+    @staticmethod
+    def show_border(border_color: str):
+        glColor4f(*color[border_color])
+        glLineWidth(12)
+        glBegin(GL_LINE_LOOP)
+        glVertex2f(0.0, 0.0)
+        glVertex2f(640.0, 0.0)
+        glVertex2f(640.0, 480.0)
+        glVertex2f(0.0, 480.0)
+        glEnd()
 
 
 class Point:
