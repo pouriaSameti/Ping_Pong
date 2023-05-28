@@ -49,10 +49,19 @@ if __name__ == '__main__':
                 ball_move_factor_y = -ball_move_factor_y
 
             if ball.coordinate.x >= 640 or ball.coordinate.x <= 0:
-                ball_move_factor_x = -ball_move_factor_x
+                if ball.coordinate.x >= 640:
+                    score_red += 1
+                    print('red score', score_red)
+
+                if ball.coordinate.x <= 0:
+                    score_blue += 1
+                    print('blue score', score_blue)
+
+                ball.set_coordinate(base_coordinate)
 
             if ball.collision_r1(r1) or ball.collision_r2(r2):
                 ball_move_factor_x = -ball_move_factor_x
+
             ball.move(ball_move_factor_x, ball_move_factor_y)
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # This function clears buffers to preset values
@@ -61,7 +70,6 @@ if __name__ == '__main__':
             glClearColor(0.2, 1.0, 0.5, 1.0)
 
             for event in pygame.event.get():  # this loop checks event queue every 100 millisecond's
-
                 if event.type == pygame.QUIT:
                     done = True
 
