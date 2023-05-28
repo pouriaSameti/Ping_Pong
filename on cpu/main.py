@@ -42,17 +42,23 @@ if __name__ == '__main__':
 
     init_orthographic()
 
-    done = False
-    while not done:
-        for event in pygame.event.get():  # this loop checks event queue every 100 millisecond's
-            if event.type == pygame.QUIT:
-                done = True
+    init_orthographic()
 
-            glClear(GL_COLOR_BUFFER_BIT)  # This function clears buffers to preset values
+    done = False
+
+    while not done:
+        while True:
+
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # This function clears buffers to preset values
             glMatrixMode(GL_MODELVIEW)
             glLoadIdentity()
+            glClearColor(0.2, 1.0, 0.5, 1.0)
 
-        pygame.display.flip()  # this functions from pygame checks frame buffer and flush it every 100 millisecond's
+            r1.show_rocket()
+            r2.show_rocket()
+            ball.show_ball()
+
+            pygame.display.flip()  # this functions from pygame checks frame buffer and flush it every 100 millisecond's
 
     pygame.quit()
 
