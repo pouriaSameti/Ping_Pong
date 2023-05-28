@@ -45,6 +45,12 @@ if __name__ == '__main__':
     done = False
     while not done:
         while True:
+            if ball.coordinate.y >= 480 or ball.coordinate.y <= 0:
+                ball_move_factor_y = -ball_move_factor_y
+
+            if ball.coordinate.x >= 640 or ball.coordinate.x <= 0:
+                ball_move_factor_x = -ball_move_factor_x
+
             ball.move(ball_move_factor_x, ball_move_factor_y)
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # This function clears buffers to preset values
