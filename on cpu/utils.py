@@ -14,3 +14,14 @@ class Point:
 
     def get_coordinate(self):
         return self.x, self.y
+
+
+class Rocket:
+
+    def __init__(self, point1: Point, point2: Point, color_name: str):
+        self.point1 = point1
+        self.point2 = point2
+        self.__color = color[color_name]
+
+    def __str__(self):
+        return f"p1{self.point1}, p2{self.point2}"
