@@ -58,6 +58,25 @@ if __name__ == '__main__':
             glLoadIdentity()
             glClearColor(0.2, 1.0, 0.5, 1.0)
 
+            for event in pygame.event.get():  # this loop checks event queue every 100 millisecond's
+
+                if event.type == pygame.QUIT:
+                    done = True
+
+                if event.type == pygame.KEYDOWN:
+                    match event.key:
+                        case pygame.K_w:
+                            r1.move(move_factor)
+
+                        case pygame.K_s:
+                            r1.move(-move_factor)
+
+                        case pygame.K_e:
+                            r2.move(move_factor)
+
+                        case pygame.K_d:
+                            r2.move(-move_factor)
+
             r1.show_rocket()
             r2.show_rocket()
             ball.show_ball()
