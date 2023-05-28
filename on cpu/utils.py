@@ -43,3 +43,10 @@ class Ball:
     def __init__(self, point: Point, color_name: str):
         self.coordinate = point
         self.__color = color[color_name]
+
+    def __str__(self):
+        return f"{self.coordinate}"
+
+    def set_coordinate(self, coordinate: tuple):
+        self.coordinate.x = coordinate[0]
+        self.coordinate.y = coordinate[1]
