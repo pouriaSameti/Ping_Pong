@@ -2,7 +2,7 @@ import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
-from utils import Point, Rocket, Ball, Numbers
+from utils import Point, Rocket, Ball, Numbers, GamePlane
 
 
 def init_orthographic():  # this function sets the orthographic view for viewer
@@ -94,6 +94,8 @@ if __name__ == '__main__':
 
                         case pygame.K_d:
                             r2.move(-move_factor)
+
+            GamePlane.show_border('gray')
 
             r1.show_rocket()
             r2.show_rocket()
