@@ -25,3 +25,11 @@ class Rocket:
 
     def __str__(self):
         return f"p1{self.point1}, p2{self.point2}"
+
+    def show_rocket(self):
+        glColor(*self.__color)
+        glLineWidth(15)
+        glBegin(GL_LINES)
+        glVertex2i(self.point1.x, self.point1.y)
+        glVertex2i(self.point2.x, self.point2.y)
+        glEnd()
