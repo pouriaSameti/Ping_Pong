@@ -67,3 +67,6 @@ class Ball:
         return not (rocket.point2.y > self.coordinate.y or rocket.point1.y < self.coordinate.y) and \
                     (rocket.point2.x >= self.coordinate.x)
 
+    def collision_r2(self, rocket: Rocket):
+        return not (rocket.point2.y > self.coordinate.y or rocket.point1.y < self.coordinate.y) and \
+                    (rocket.point2.x <= self.coordinate.x)
