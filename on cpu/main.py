@@ -25,6 +25,13 @@ if __name__ == '__main__':
     base_coordinate = (280, 200)
     ball = Ball(p5, 'orange')
 
+    move_factor = 10
+    ball_move_factor_x = 0.045
+    ball_move_factor_y = 0.045
+
+    score_red = 0
+    score_blue = 0
+
     pygame.init()  # initialization for the execution window by using pygame engine
 
     width = 1000
