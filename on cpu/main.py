@@ -42,12 +42,10 @@ if __name__ == '__main__':
 
     init_orthographic()
 
-    init_orthographic()
-
     done = False
-
     while not done:
         while True:
+            ball.move(ball_move_factor_x, ball_move_factor_y)
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # This function clears buffers to preset values
             glMatrixMode(GL_MODELVIEW)
