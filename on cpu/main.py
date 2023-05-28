@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     p5 = Point(280, 400)
     base_coordinate = (280, 200)
-    ball = Ball(p5, 'sunset_orange')
+    ball = Ball(p5, 'yellow_orange')
 
     p6 = Point(250, 460)
     score_r1 = Numbers(p6, 'red')

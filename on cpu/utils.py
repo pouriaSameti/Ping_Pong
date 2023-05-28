@@ -2,9 +2,8 @@ from OpenGL.GL import *
 
 color = {'red': [1, 0, 0, 1], 'green': [0, 0.9, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1],
          'white': [1, 1, 1, 1], 'gray': [0.93, 0.93, 0.93, 1.0], 'shamrock_green': [0, 0.61, 0.27, 1],
-         'malachite': [0.043, 0.85, 0.31, 1],
-         'tangerine': [0.94, 0.50, 0.0, 1.0], 'yellow_orange': [1.0, 0.66, 0.2, 1.0],
-         'sunset_orange': [0.98, 0.37, 0.33, 1.0]}
+         'malachite': [0.043, 0.85, 0.31, 1],'tangerine': [0.94, 0.50, 0.0, 1.0],
+         'yellow_orange': [1.0, 0.66, 0.2, 1.0], 'sunset_orange': [0.98, 0.37, 0.33, 1.0]}
 
 
 class GamePlane:
@@ -68,7 +67,15 @@ class Rocket:
         glEnd()
 
     def move(self, amount):
-        if not(self.point2.y - 1 == 0 or self.point1.y + 1 == 480):
+        if self.point2.y < 25:
+            self.point2.y = 25
+            self.point1.y = 125
+
+        if self.point1.y > 455:
+            self.point2.y = 355
+            self.point1.y = 455
+
+        if self.point2.y >= 15:
             self.point1.y += amount
             self.point2.y += amount
 
