@@ -77,40 +77,214 @@ class Numbers:
     def __init__(self, start_coordinate: Point):
         self.coordinate = start_coordinate
 
-    def show_number(self):
+    def show_number(self, number):
         constant_var = 30
         distance = 5
         glLineWidth(5)
 
-        glBegin(GL_LINES)
-        # a
-        glVertex2f(self.coordinate.x, self.coordinate.y)
-        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+        match number:
+            case 1:
+                glBegin(GL_LINES)
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
 
-        # b
-        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
-        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glEnd()
 
-        # c
-        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
-        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+            case 2:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
 
-        # d
-        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
-        glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
 
-        # e
-        glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
-        glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                # g
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
 
-        # f
-        glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
-        glVertex2f(self.coordinate.x, self.coordinate.y)
+                # e
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
 
-        # g
-        glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
-        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                # d
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                glEnd()
 
-        glEnd()
+            case 3:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
 
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # g
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+                # d
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                glEnd()
+
+            case 4:
+                glBegin(GL_LINES)
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # g
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+                # f
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glEnd()
+
+            case 5:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+
+                # f
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+
+                # g
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+                # d
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                glEnd()
+
+            case 6:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+
+                # f
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+
+                # g
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+                # d
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+
+                # e
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glEnd()
+
+            case 7:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glEnd()
+
+            case 8:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+                # d
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+
+                # e
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+
+                # f
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+
+                # g
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                glEnd()
+
+            case 9:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+                # d
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+
+                # f
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+
+                # g
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                glEnd()
 
