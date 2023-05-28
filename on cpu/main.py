@@ -26,10 +26,10 @@ if __name__ == '__main__':
     ball = Ball(p5, 'orange')
 
     p6 = Point(250, 460)
-    score_r1 = Numbers(p6)
+    score_r1 = Numbers(p6, 'red')
 
     p7 = Point(350, 460)
-    score_r2 = Numbers(p7)
+    score_r2 = Numbers(p7, 'blue')
 
 
     move_factor = 10
@@ -58,11 +58,9 @@ if __name__ == '__main__':
             if ball.coordinate.x >= 640 or ball.coordinate.x <= 0:
                 if ball.coordinate.x >= 640:
                     score_red += 1
-                    print('red score', score_red)
 
                 if ball.coordinate.x <= 0:
                     score_blue += 1
-                    print('blue score', score_blue)
 
                 ball.set_coordinate(base_coordinate)
 

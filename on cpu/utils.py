@@ -74,13 +74,14 @@ class Ball:
 
 class Numbers:
 
-    def __init__(self, start_coordinate: Point):
+    def __init__(self, start_coordinate: Point, color_name: str):
         self.coordinate = start_coordinate
+        self.__color = color[color_name]
 
     def show_number(self, number):
         constant_var = 30
-        distance = 5
         glLineWidth(5)
+        glColor4f(*self.__color)
 
         match number:
             case 0:
