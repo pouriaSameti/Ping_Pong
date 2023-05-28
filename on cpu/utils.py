@@ -75,7 +75,7 @@ class Rocket:
             self.point2.y = 355
             self.point1.y = 455
 
-        if self.point2.y >= 15:
+        else:
             self.point1.y += amount
             self.point2.y += amount
 
