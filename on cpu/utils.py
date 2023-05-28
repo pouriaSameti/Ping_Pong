@@ -70,3 +70,47 @@ class Ball:
     def collision_r2(self, rocket: Rocket):
         return not (rocket.point2.y > self.coordinate.y or rocket.point1.y < self.coordinate.y) and \
                     (rocket.point2.x <= self.coordinate.x)
+
+
+class Numbers:
+
+    def __init__(self, start_coordinate: Point):
+        self.coordinate = start_coordinate
+
+    def show_number(self):
+        constant_var = 30
+        distance = 5
+        glLineWidth(5)
+
+        glBegin(GL_LINES)
+        # a
+        glVertex2f(self.coordinate.x, self.coordinate.y)
+        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+
+        # b
+        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+        # c
+        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+        # d
+        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+        glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+
+        # e
+        glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+        glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+
+        # f
+        glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+        glVertex2f(self.coordinate.x, self.coordinate.y)
+
+        # g
+        glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+        glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+        glEnd()
+
+
