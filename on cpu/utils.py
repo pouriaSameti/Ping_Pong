@@ -57,3 +57,8 @@ class Ball:
         glBegin(GL_POINTS)
         glVertex2f(self.coordinate.x, self.coordinate.y)
         glEnd()
+
+    def move(self, ball_move_factor_x, ball_move_factor_y):
+
+        self.coordinate.x += ball_move_factor_x
+        self.coordinate.y += ball_move_factor_y
