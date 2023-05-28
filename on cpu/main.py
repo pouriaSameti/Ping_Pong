@@ -49,8 +49,12 @@ if __name__ == '__main__':
     init_orthographic()
 
     done = False
+    win = False
     while not done:
-        while True:
+        while not win:
+            if score_red == 10 or score_blue == 10:
+                win = True
+
             if ball.coordinate.y >= 480 or ball.coordinate.y <= 0:
                 ball_move_factor_y = -ball_move_factor_y
 
