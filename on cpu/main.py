@@ -96,6 +96,7 @@ if __name__ == '__main__':
                             r2.move(-move_factor)
 
             GamePlane.show_border('gray')
+            GamePlane.show_separation_line(Point(320, 0), 'gray')
 
             r1.show_rocket()
             r2.show_rocket()

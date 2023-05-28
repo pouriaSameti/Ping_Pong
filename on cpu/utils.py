@@ -1,6 +1,6 @@
 from OpenGL.GL import *
 
-color = {'red': [1, 0, 0, 1], 'green': [0, 1, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1],
+color = {'red': [1, 0, 0, 1], 'green': [0, 0.9, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1],
          'white': [1, 1, 1, 1], 'gray': [0.93, 0.93, 0.93, 1.0]}
 
 
@@ -15,6 +15,21 @@ class GamePlane:
         glVertex2f(640.0, 0.0)
         glVertex2f(640.0, 480.0)
         glVertex2f(0.0, 480.0)
+        glEnd()
+
+    @staticmethod
+    def show_separation_line(s_point, border_color: str):
+        glColor4f(*color[border_color])
+        glLineWidth(15)
+
+        length = 50
+        gap = 30
+
+        glBegin(GL_LINES)
+        for i in range(10):
+            glVertex2f(s_point.x, s_point.y)
+            glVertex2f(s_point.x, s_point.y + gap)
+            s_point.y += length
         glEnd()
 
 
