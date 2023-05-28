@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
+from utils import Point, Rocket, Ball
 
 
 def init_orthographic():  # this function sets the orthographic view for viewer
@@ -11,6 +12,18 @@ def init_orthographic():  # this function sets the orthographic view for viewer
 
 
 if __name__ == '__main__':
+
+    p1 = Point(10, 300)
+    p2 = Point(10, 200)
+    r1 = Rocket(p1, p2, 'red')
+
+    p3 = Point(630, 300)
+    p4 = Point(630, 200)
+    r2 = Rocket(p3, p4, 'blue')
+
+    p5 = Point(280, 200)
+    base_coordinate = (280, 200)
+    ball = Ball(p5, 'orange')
 
     pygame.init()  # initialization for the execution window by using pygame engine
 
