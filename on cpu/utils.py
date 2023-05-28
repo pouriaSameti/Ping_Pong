@@ -37,3 +37,9 @@ class Rocket:
     def move(self, amount):
         self.point1.y += amount
         self.point2.y += amount
+
+
+class Ball:
+    def __init__(self, point: Point, color_name: str):
+        self.coordinate = point
+        self.__color = color[color_name]
