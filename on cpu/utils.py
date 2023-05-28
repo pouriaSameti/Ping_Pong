@@ -35,8 +35,9 @@ class Rocket:
         glEnd()
 
     def move(self, amount):
-        self.point1.y += amount
-        self.point2.y += amount
+        if not(self.point2.y - 1 == 0 or self.point1.y + 1 == 480):
+            self.point1.y += amount
+            self.point2.y += amount
 
 
 class Ball:

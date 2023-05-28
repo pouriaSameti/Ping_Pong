@@ -31,8 +31,7 @@ if __name__ == '__main__':
     p7 = Point(350, 460)
     score_r2 = Numbers(p7, 'blue')
 
-
-    move_factor = 10
+    move_factor = 20
     ball_move_factor_x = 0.045
     ball_move_factor_y = 0.045
 
