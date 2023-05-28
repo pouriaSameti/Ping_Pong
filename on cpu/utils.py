@@ -94,7 +94,7 @@ class Ball:
 
     def show_ball(self):
         glColor4f(*self.__color)
-        glPointSize(15)  # this method sets the size of the points
+        glPointSize(15)
         glBegin(GL_POINTS)
         glVertex2f(self.coordinate.x, self.coordinate.y)
         glEnd()
@@ -151,7 +151,6 @@ class Numbers:
                 glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
                 glVertex2f(self.coordinate.x, self.coordinate.y)
                 glEnd()
-
 
             case 1:
                 glBegin(GL_LINES)
