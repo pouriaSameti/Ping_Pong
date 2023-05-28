@@ -33,3 +33,7 @@ class Rocket:
         glVertex2i(self.point1.x, self.point1.y)
         glVertex2i(self.point2.x, self.point2.y)
         glEnd()
+
+    def move(self, amount):
+        self.point1.y += amount
+        self.point2.y += amount
