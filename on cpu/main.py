@@ -2,7 +2,7 @@ import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
-from utils import Point, Rocket, Ball, Numbers, GamePlane
+from utils import Point, Rocket, Ball, Numbers, GamePlane, color
 
 
 def init_orthographic():  # this function sets the orthographic view for viewer
@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     p5 = Point(280, 400)
     base_coordinate = (280, 200)
-    ball = Ball(p5, 'orange')
+    ball = Ball(p5, 'sunset_orange')
 
     p6 = Point(250, 460)
     score_r1 = Numbers(p6, 'red')
@@ -75,7 +75,7 @@ if __name__ == '__main__':
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # This function clears buffers to preset values
             glMatrixMode(GL_MODELVIEW)
             glLoadIdentity()
-            glClearColor(0.2, 1.0, 0.5, 1.0)
+            glClearColor(*color['shamrock_green'])
 
             for event in pygame.event.get():  # this loop checks event queue every 100 millisecond's
                 if event.type == pygame.QUIT:

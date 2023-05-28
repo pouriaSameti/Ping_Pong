@@ -1,7 +1,10 @@
 from OpenGL.GL import *
 
 color = {'red': [1, 0, 0, 1], 'green': [0, 0.9, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1],
-         'white': [1, 1, 1, 1], 'gray': [0.93, 0.93, 0.93, 1.0]}
+         'white': [1, 1, 1, 1], 'gray': [0.93, 0.93, 0.93, 1.0], 'shamrock_green': [0, 0.61, 0.27, 1],
+         'malachite': [0.043, 0.85, 0.31, 1],
+         'tangerine': [0.94, 0.50, 0.0, 1.0], 'yellow_orange': [1.0, 0.66, 0.2, 1.0],
+         'sunset_orange': [0.98, 0.37, 0.33, 1.0]}
 
 
 class GamePlane:
@@ -84,7 +87,7 @@ class Ball:
 
     def show_ball(self):
         glColor4f(*self.__color)
-        glPointSize(12)  # this method sets the size of the points
+        glPointSize(15)  # this method sets the size of the points
         glBegin(GL_POINTS)
         glVertex2f(self.coordinate.x, self.coordinate.y)
         glEnd()
