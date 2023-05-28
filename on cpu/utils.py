@@ -83,6 +83,34 @@ class Numbers:
         glLineWidth(5)
 
         match number:
+            case 0:
+                glBegin(GL_LINES)
+                # a
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+
+                # b
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+
+                # c
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+
+                # d
+                glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+
+                # e
+                glVertex2f(self.coordinate.x, self.coordinate.y - (2 * constant_var))
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+
+                # f
+                glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
+                glVertex2f(self.coordinate.x, self.coordinate.y)
+                glEnd()
+
+
             case 1:
                 glBegin(GL_LINES)
                 # b
@@ -257,7 +285,6 @@ class Numbers:
                 # g
                 glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
                 glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
-
                 glEnd()
 
             case 9:
@@ -285,6 +312,6 @@ class Numbers:
                 # g
                 glVertex2f(self.coordinate.x, self.coordinate.y - constant_var)
                 glVertex2f(self.coordinate.x + constant_var, self.coordinate.y - constant_var)
-
                 glEnd()
+
 
