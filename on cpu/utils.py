@@ -3,7 +3,7 @@ import time
 
 color = {'red': [1, 0, 0, 1], 'green': [0, 0.9, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1],
          'white': [1, 1, 1, 1], 'gray': [0.93, 0.93, 0.93, 1.0], 'shamrock_green': [0, 0.61, 0.27, 1],
-         'malachite': [0.043, 0.85, 0.31, 1],'tangerine': [0.94, 0.50, 0.0, 1.0],
+         'malachite': [0.043, 0.85, 0.31, 1], 'tangerine': [0.94, 0.50, 0.0, 1.0],
          'yellow_orange': [1.0, 0.66, 0.2, 1.0], 'sunset_orange': [0.98, 0.37, 0.33, 1.0]}
 
 
@@ -388,15 +388,11 @@ class Timer:
             self.__sec -= 1
             time.sleep(1)
 
-    def show_timer(self):
+    def show_timer(self, min_point: Point, sec1_point: Point, sec2_point: Point, digits_color: str):
 
-        p1 = Point(250, 80)
-        min_digit = Numbers(p1, 'blue')
-
-        p2 = Point(340, 80)
-        p3 = Point(380, 80)
-        sec_digit_second = Numbers(p2, 'blue')
-        sec_digit_first = Numbers(p3, 'blue')
+        min_digit = Numbers(min_point, digits_color)
+        sec_digit_second = Numbers(sec2_point, digits_color)
+        sec_digit_first = Numbers(sec1_point, digits_color)
 
         min_digit.show_number(self.__min)
 
