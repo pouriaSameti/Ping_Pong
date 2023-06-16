@@ -109,7 +109,7 @@ if __name__ == '__main__':
                             velocity += 0.1
 
                         case pygame.K_DOWN:
-                            if velocity > 0.1:
+                            if velocity > 0.2:
                                 velocity -= 0.1
 
             GamePlane.show_border('gray')
