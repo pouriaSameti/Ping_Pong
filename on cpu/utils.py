@@ -1,4 +1,5 @@
 from OpenGL.GL import *
+import time
 
 color = {'red': [1, 0, 0, 1], 'green': [0, 0.9, 0, 1], 'blue': [0, 0, 1, 1], 'orange': [1.0, 0.64, 0.0, 1],
          'white': [1, 1, 1, 1], 'gray': [0.93, 0.93, 0.93, 1.0], 'shamrock_green': [0, 0.61, 0.27, 1],
@@ -369,5 +370,18 @@ class Timer:
     @property
     def seconds(self):
         return self.__min
+
+    def start_timer(self):
+
+        while 1:
+            if self.__min == 0 and self.__sec <= 0:
+                break
+
+            if self.__sec == 0 and self.__min != 0:
+                self.__sec = 60
+                self.__min -= 1
+
+            self.__sec -= 1
+            time.sleep(1)
 
 
