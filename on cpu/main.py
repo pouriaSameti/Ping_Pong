@@ -53,7 +53,7 @@ if __name__ == '__main__':
     done = False
     win = False
 
-    t1 = Timer(minute=8, second=20)
+    t1 = Timer(minute=2, second=1)
     thr1 = Thread(target=t1.start_timer)
 
     while not done:
@@ -123,6 +123,7 @@ if __name__ == '__main__':
 
             t1.show_timer(min_point=Point(250, 80), sec1_point=Point(380, 80), sec2_point=Point(340, 80),
                           digits_color='sunset_orange')
+
             pygame.display.flip()  # this functions from pygame checks frame buffer and flush it every 100 millisecond's
 
     pygame.quit()
