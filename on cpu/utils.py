@@ -369,7 +369,11 @@ class Timer:
 
     @property
     def seconds(self):
-        return self.__min
+        return self.__sec
+
+    @property
+    def is_terminated(self):
+        return self.__min == 0 and self.__sec == 0
 
     def start_timer(self):
 
