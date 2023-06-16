@@ -34,6 +34,7 @@ if __name__ == '__main__':
     move_factor = 20
     ball_move_factor_x = 0.045
     ball_move_factor_y = 0.045
+    velocity = 1
 
     score_red = 0
     score_blue = 0
@@ -70,7 +71,7 @@ if __name__ == '__main__':
             if ball.collision_r1(r1) or ball.collision_r2(r2):
                 ball_move_factor_x = -ball_move_factor_x
 
-            ball.move(ball_move_factor_x, ball_move_factor_y)
+            ball.move(ball_move_factor_x * velocity, ball_move_factor_y * velocity)
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # This function clears buffers to preset values
             glMatrixMode(GL_MODELVIEW)
@@ -95,7 +96,11 @@ if __name__ == '__main__':
                         case pygame.K_d:
                             r2.move(-move_factor)
 
+                        case pygame.K_UP:
+                            velocity += 0.1
 
+                        case pygame.K_DOWN:
+                            velocity -= 0.1
 
             GamePlane.show_border('gray')
             GamePlane.show_separation_line(Point(320, 0), 'gray')
