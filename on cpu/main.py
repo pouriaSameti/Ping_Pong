@@ -53,7 +53,7 @@ if __name__ == '__main__':
     done = False
     win = False
 
-    t1 = Timer(minute=8, second=20)
+    t1 = Timer(minute=2, second=1)
     thr1 = Thread(target=t1.start_timer)
 
     while not done:
@@ -109,7 +109,8 @@ if __name__ == '__main__':
                             velocity += 0.1
 
                         case pygame.K_DOWN:
-                            velocity -= 0.1
+                            if velocity > 0.1:
+                                velocity -= 0.1
 
             GamePlane.show_border('gray')
             GamePlane.show_separation_line(Point(320, 0), 'gray')
