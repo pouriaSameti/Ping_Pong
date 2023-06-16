@@ -388,4 +388,25 @@ class Timer:
             self.__sec -= 1
             time.sleep(1)
 
+    def show_timer(self):
+
+        p1 = Point(250, 80)
+        min_digit = Numbers(p1, 'blue')
+
+        p2 = Point(340, 80)
+        p3 = Point(380, 80)
+        sec_digit_second = Numbers(p2, 'blue')
+        sec_digit_first = Numbers(p3, 'blue')
+
+        min_digit.show_number(self.__min)
+
+        if self.__sec < 10:
+            sec_digit_second.show_number(0)
+            sec_digit_first.show_number(self.__sec)
+
+        else:
+            sec_digit_second.show_number(self.__sec // 10)
+            sec_digit_first.show_number(self.__sec % 10)
+
+
 
