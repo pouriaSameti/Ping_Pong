@@ -95,6 +95,8 @@ if __name__ == '__main__':
                         case pygame.K_d:
                             r2.move(-move_factor)
 
+
+
             GamePlane.show_border('gray')
             GamePlane.show_separation_line(Point(320, 0), 'gray')
 
