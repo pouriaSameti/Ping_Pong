@@ -356,3 +356,18 @@ class Numbers:
                 glEnd()
 
 
+class Timer:
+
+    def __init__(self, minute: int, second: int):
+        self.__min = minute
+        self.__sec = second
+
+    @property
+    def minutes(self):
+        return self.__min
+
+    @property
+    def seconds(self):
+        return self.__min
+
+
