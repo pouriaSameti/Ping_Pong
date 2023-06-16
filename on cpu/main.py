@@ -2,7 +2,8 @@ import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
-from utils import Point, Rocket, Ball, Numbers, GamePlane, color
+from utils import Point, Rocket, Ball, Numbers, GamePlane, color, Timer
+from threading import Thread
 
 
 def init_orthographic():  # this function sets the orthographic view for viewer
@@ -51,8 +52,16 @@ if __name__ == '__main__':
 
     done = False
     win = False
+
+    t1 = Timer(minute=8, second=20)
+    thr1 = Thread(target=t1.start_timer)
+
     while not done:
+        thr1.start()
         while not win:
+            if t1.is_terminated:
+                win = True
+
             if score_red == 10 or score_blue == 10:
                 win = True
 
@@ -112,6 +121,8 @@ if __name__ == '__main__':
             score_r1.show_number(score_red)
             score_r2.show_number(score_blue)
 
+            t1.show_timer(min_point=Point(250, 80), sec1_point=Point(380, 80), sec2_point=Point(340, 80),
+                          digits_color='sunset_orange')
             pygame.display.flip()  # this functions from pygame checks frame buffer and flush it every 100 millisecond's
 
     pygame.quit()
