@@ -1,4 +1,4 @@
-# Ping_Pong
+# Ping Pong
 Final Project of Computer Graphics Course.
 
 ## Execution in Immediate Mode
@@ -7,7 +7,7 @@ Final Project of Computer Graphics Course.
 We implemented a ping pong game. We have 2 handles, a ball, a scoreboard, and a Timer.
 
 ### Features
--We can control the speed of the ball.
+-You can control the speed of the ball.
 
 -You have 2 minutes to play the game. You can see your time on the timer at the bottom of the game screen.
 
